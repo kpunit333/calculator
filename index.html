@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Calculator-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&family=Nunito+Sans&family=Orbitron&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.2/math.js" integrity="sha512-ap888g/h47w/Rp6mra1vA5NJtdPZJRxOuF/x7jkrL2NdRB8XrKwXIt/PMvre+oMPUdYt+6NNDjwbdwl/PkYXrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>SolveIt</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-items nav-top">
+            <div class="aligns left">
+                <div class="ncomp head">
+                    <img class="head-img" src="Calculator-icon.png" alt="logo">
+                    <h2><a href="index.html"> SolveIt</a></h2>
+                </div>
+            </div>
+            <div class="aligns right">
+                <div class="ncomp hamburger">
+                    <i class="bi bi-list"></i>
+                </div>
+            </div>
+            
+
+        </div>
+        <div class="navbar-items nav-bottom">
+
+            <div class="links left">
+                <a href="#" class="tab-links">Home</a>
+                <a href="#" class="tab-links">About</a>
+            </div>
+
+            <div class="nav-bottom-phn">
+                <li><a href="#" class="tab-links">Home</a></li>
+                <li><a href="#" class="tab-links">About</a></li>
+            </div>
+        </div>
+
+        
+    </nav>
+
+    <div class="calnav">
+        <div class="cal-sel-box">
+            
+            <select name="cal-type" id="cal-type">
+                <option value="cal-opts" selected >Calculator</option>
+                <option value="conv-opts" >Converter</option>
+            </select>
+
+        </div>
+
+        <div class="opt-box">
+            <div class="opt-cont">
+                <div id="standard" class="cal-opts active-opt primary-opt">Standard</div>
+                <div id="scientific" class="opt cal-opts">Scientific</div>
+                <div id="programmer" class="opt cal-opts">Programmer</div>
+                
+                <div id="weight" class="opt conv-opts">Weight</div>
+                <div id="currency" class="opt conv-opts">Currency</div>
+                <div id="volume" class="opt conv-opts">Volume</div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="calculator-body">
+
+        <div class="newcal standard">
+            <div class="calbody">
+                <div class="calscreen-box">
+    
+                    <input type="text" class="scr eqn" placeholder="0"   >
+                    <input type="text" class="scr sol" placeholder="0" sel-dis  disabled>
+    
+                </div>
+                <div class="calbtn-box">
+    
+                    <div class="btn-row">
+                        <!-- <button id="*0.01" class="cbtn">%</button> -->
+                        <button id="percent" class="cbtn">%</button>
+                        <button id="bracket" class="cbtn"><i class="bi bi-braces"></i></button>
+                        <button id="backspace"  class="cbtn"><i class="bi bi-backspace"></i></button>
+                        <button id="clear" class="cbtn">CE</button>
+    
+                    </div>
+                    
+                    
+                    <div class="btn-row">
+                        <button id="by" class="cbtn">1/𝑥</button>
+                        <button id="square" class="cbtn">𝑥²</button>
+                        <button id="root" class="cbtn">&Sqrt;𝑥</button>
+                        <button id="/"  class="cbtn">/</button>
+    
+                    </div>
+    
+                    <div class="btn-row">
+    
+                        <button id="7"  class="cbtn">7</button>
+                        <button id="8"  class="cbtn">8</button>
+                        <button id="9"  class="cbtn">9</button>
+                        <button id="*"  class="cbtn">*</button>
+                    </div>
+                    
+                    <div class="btn-row">
+                        <button id="4"  class="cbtn">4</button>
+                        <button id="5"  class="cbtn">5</button>
+                        <button id="6"  class="cbtn">6</button>
+                        <button id="+"  class="cbtn">+</button>
+    
+                    </div>
+    
+                    <div class="btn-row">
+                        <button id="1"  class="cbtn">1</button>
+                        <button id="2"  class="cbtn">2</button>
+                        <button id="3"  class="cbtn">3</button>
+                        <button id="-"  class="cbtn">-</button>
+    
+                    </div>
+                    
+                    <div class="btn-row">                    
+                        <button id="0"  class="cbtn">0</button>
+                        <button id="."  class="cbtn"><i class="bi bi-dot"></i></button>
+                        <button id="ans"  class="cbtn">Ans</button>
+                        <button id="solve"  class="cbtn">=</button>
+    
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+
+        <div class="newcal scientific">
+
+            <div class="calbody">
+                <div class="scalscreen-box">
+    
+                    <input type="text" class="sscr seqn" placeholder="0"   >
+                    <input type="text" class="sscr ssol" placeholder="0" sel-dis  disabled>
+    
+                </div>
+                <div class="scalbtn-box">
+    
+                    <div class="sbtn-row">
+                        <button id="deg" class="sbtn ang">DEG</button>
+                        <button id="rad"  class="sbtn ang">RAD</button>
+                        <button id="grad" class="sbtn ang">GRAD</button>
+    
+                    </div>
+
+                    <div class="sbtn-row">
+                        <button id="trig" class="sbtn">Inv</button>
+                        <button id="%" class="sbtn">%</button>
+                        <button id="bracket" class="sbtn"><i class="bi bi-braces"></i></button>
+                        <button id="backspace"  class="sbtn"><i class="bi bi-backspace"></i></button>
+                        <button id="clear" class="sbtn">CE</button>
+    
+                    </div>
+                    
+                    <div class="sbtn-row">
+                        <button id="sin" class="sbtn pos">sin</button>
+                        <button id="cos" class="sbtn pos">cos</button>
+                        <button id="tan" class="sbtn pos">tan</button>
+                        <button id="isin" class="sbtn inv">sin -1</button>
+                        <button id="icos" class="sbtn inv">cos -1</button>
+                        <button id="itan" class="sbtn inv">tan -1</button>
+                        <button id="log10"  class="sbtn">log</button>
+                        <button id="log" class="sbtn">ln</button>
+    
+                    </div>
+                    
+                    
+                    <div class="sbtn-row">
+                        <button id="mod" class="sbtn">mod</button>
+                        <button id="by" class="sbtn">1/𝑥</button>
+                        <button id="square" class="sbtn">𝑥²</button>
+                        <button id="sqrt" class="sbtn">&Sqrt;𝑥</button>
+                        <button id="/"  class="sbtn">/</button>
+    
+                    </div>
+    
+                    <div class="sbtn-row">
+    
+                        <button id="^"  class="sbtn"><i class="bi bi-chevron-up"></i></button>
+                        <button id="7"  class="sbtn">7</button>
+                        <button id="8"  class="sbtn">8</button>
+                        <button id="9"  class="sbtn">9</button>
+                        <button id="*"  class="sbtn">*</button>
+                    </div>
+                    
+                    <div class="sbtn-row">
+                        <button id="!"  class="sbtn"><i class="bi bi-exclamation-lg"></i></button>
+                        <button id="4"  class="sbtn">4</button>
+                        <button id="5"  class="sbtn">5</button>
+                        <button id="6"  class="sbtn">6</button>
+                        <button id="+"  class="sbtn">+</button>
+    
+                    </div>
+    
+                    <div class="sbtn-row">
+                        <button id="exp"  class="sbtn">&exponentiale;</button>
+                        <button id="1"  class="sbtn">1</button>
+                        <button id="2"  class="sbtn">2</button>
+                        <button id="3"  class="sbtn">3</button>
+                        <button id="-"  class="sbtn">-</button>
+    
+                    </div>
+                    
+                    <div class="sbtn-row">                    
+                        <button id="pi"  class="sbtn">&pi;</button>
+                        <button id="0"  class="sbtn">0</button>
+                        <button id="."  class="sbtn"><i class="bi bi-dot"></i></button>
+                        <button id="ans"  class="sbtn">Ans</button>
+                        <button id="solve"  class="sbtn">=</button>
+    
+                    </div>
+    
+                </div>
+            </div>
+
+        </div>
+
+        <div class="newcal programmer">
+
+            <div class="prog-body">
+
+                <div id="bin-row" class="prog-row">
+                    <span id="bin" class="base">BIN</span>
+                    <input type="text" id="bin-input" class="prog-input" placeholder="" disabled>
+                </div>
+
+                <div id="oct-row" class="prog-row">
+                    <span id="oct" class="base">OCT</span>
+                    <input type="text" id="oct-input" class="prog-input" placeholder="" disabled>
+                </div>
+
+                <div id="hex-row" class="prog-row">
+                    <span id="hex" class="base">HEX</span>
+                    <input type="text" id="hex-input" class="prog-input" placeholder="" disabled>
+                </div>
+
+                <div id="dec-row" class="prog-row">
+                    <span id="dec" class="base">DEC</span>
+                    <input type="text" id="dec-input" class="prog-input" placeholder="" disabled>
+                </div>
+
+                <div class="prog-row-btn">
+                    <span class="prog-convert-btn" onclick="programConvert()">Convert</span>
+                </div>
+
+            </div>
+
+        </div>
+    
+        <div class="memory">
+            <h1>Memory</h1>
+            <div class="mem-list">
+                
+
+            </div>
+            <h1 onclick="$('.mem-list').html('')" class="clear-btn">Clear all --<i class="bi bi-trash-fill"></i></h1>
+        </div>
+
+    </div>
+    
+    <div class="converter-body">
+
+        <div class="newconv weight">
+
+            <div class="sel-box wt-input-box">
+
+                <input type="text" class="wt-input sel-ip">
+
+                <select name="wt-in" id="wt-in" class="sel-list">
+                    <option value="ton">Tonne</option>
+                    <option value="kg" selected>Kilogram</option>
+                    <option value="g">Gram</option>
+                    <option value="mlg">Milligram</option>
+                    <option value="mig">Microgram</option>
+                    <option value="ounce">Ounce</option>
+                    <option value="pound">Pound</option>
+                    <option value="carat">Carat</option>
+                </select>
+
+            </div>
+
+            <h1 class="to"><i class="bi bi-arrow-down-square"></i></h1>
+
+            
+            <div class="sel-box wt-output-box">
+                
+                <input type="text" class="wt-output sel-ip sel-dis" disabled>
+                
+                <select name="wt-out" id="wt-out" class="sel-list">
+                    <option value="ton">Tonne</option>
+                    <option value="kg">Kilogram</option>
+                    <option value="g" selected>Gram</option>
+                    <option value="mlg">Milligram</option>
+                    <option value="mig">Microgram</option>
+                    <option value="ounce">Ounce</option>
+                    <option value="pound">Pound</option>
+                    <option value="carat">Carat</option>
+                </select>
+            </div>
+
+            <div class="convert-btn">
+
+                <button id="wt-btn" class="conv-btn c-conv-btn wt-conv-btn">Convert</button>
+                <button class="conv-btn c-clear-btn wt-clear-btn">Clear</button>
+            </div>
+            
+
+
+        </div>
+
+        <div class="newconv currency">
+
+            <div class="sel-box cnc-input-box">
+
+                <input type="text" class="cnc-input sel-ip">
+
+                <select name="cnc-in" id="cnc-in" class="sel-list"> 
+                    <option value="yuan">Chinese Yuan</option>
+                    <option value="yen">Japanese Yen</option>
+                    <option value="peso">Argentina Peso</option>
+                    <option value="ausDollar">Australian Dollar</option>
+                    <option value="usDollar" selected>US Dollar</option>
+                    <option value="canDollar">Canadian Dollar</option>
+                    <option value="euro">Euro</option>
+                    <option value="inr">Indian Rupee</option>
+                    <option value="saRand">South African Rand</option>
+                    <option value="taka">Bangladeshi Taka</option>
+                </select>
+
+            </div>
+
+            <h1 class="to"><i class="bi bi-arrow-down-square"></i></h1>
+
+            
+            <div class="sel-box cnc-output-box">
+                
+                <input type="text" class="cnc-output sel-ip sel-dis" disabled>
+                
+                <select name="cnc-out" id="cnc-out" class="sel-list">
+                    <option value="yuan">Chinese Yuan</option>
+                    <option value="yen">Japanese Yen</option>
+                    <option value="peso" selected>Argentina Peso</option>
+                    <option value="ausDollar">Australian Dollar</option>
+                    <option value="usDollar">US Dollar</option>
+                    <option value="canDollar">Canadian Dollar</option>
+                    <option value="euro">Euro</option>
+                    <option value="inr" selected>Indian Rupee</option>
+                    <option value="saRand">South African Rand</option>
+                    <option value="taka">Bangladeshi Taka</option>
+                </select>
+            </div>
+
+            <div class="convert-btn">
+
+                <button id="cnc-btn" class="conv-btn c-conv-btn cnc-conv-btn">Convert</button>
+                <button class="conv-btn c-clear-btn cnc-clear-btn">Clear</button>
+            </div>
+            
+
+
+        </div>
+        <div class="newconv volume">
+
+            <div class="sel-box vol-input-box">
+
+                <input type="text" class="vol-input sel-ip">
+
+                <select name="vol-in" id="vol-in" class="sel-list">
+                    <option value="gallon">Gallon</option>
+                    <option value="quart">Quart</option>
+                    <option value="cmeter" selected>Cubic meter</option>
+                    <option value="ccm">Cubic cm</option>
+                    <option value="liter">Liter</option>
+                    <option value="cinch">Cubic inch</option>
+                    <option value="cfoot">Cubic foot</option>
+                    <option value="tablespoon">Tablespoon</option>
+                    <option value="teaspoon">Teaspoon</option>
+                </select>
+
+            </div>
+
+            <h1 class="to"><i class="bi bi-arrow-down-square"></i></h1>
+
+            
+            <div class="sel-box vol-output-box">
+                
+                <input type="text" class="vol-output sel-ip sel-dis" disabled>
+                
+                <select name="vol-out" id="vol-out" class="sel-list">
+                    <option value="gallon">Gallon</option>
+                    <option value="quart">Quart</option>
+                    <option value="cmeter">Cubic meter</option>
+                    <option value="ccm">Cubic cm</option>
+                    <option value="liter" selected>Liter</option>
+                    <option value="ml">milliliter</option>
+                    <option value="cinch">Cubic inch</option>
+                    <option value="cfoot">Cubic foot</option>
+                    <option value="tablespoon">Tablespoon</option>
+                    <option value="teaspoon">Teaspoon</option>
+                </select>
+            </div>
+
+            <div class="convert-btn">
+
+                <button id="vol-btn" class="conv-btn c-conv-btn vol-conv-btn">Convert</button>
+                <button class="conv-btn c-clear-btn vol-clear-btn">Clear</button>
+            </div>
+            
+
+
+        </div>
+        <div class="newconv temperature">
+
+            <div class="sel-box temp-input-box">
+
+                <input type="text" class="temp-input sel-ip">
+
+                <select name="temp-in" id="temp-in" class="sel-list">
+                    <option value="ton">Tonne</option>
+                    <option value="kg" selected>Kilogram</option>
+                    <option value="g">Gram</option>
+                    <option value="mlg">Milligram</option>
+                    <option value="mig">Microgram</option>
+                    <option value="ounce">Ounce</option>
+                    <option value="pound">Pound</option>
+                    <option value="carat">Carat</option>
+                </select>
+
+            </div>
+
+            <h1 class="to"><i class="bi bi-arrow-down-square"></i></h1>
+
+            
+            <div class="sel-box temp-output-box">
+                
+                <input type="text" class="temp-output sel-ip sel-dis" disabled>
+                
+                <select name="temp-out" id="temp-out" class="sel-list">
+                    <option value="ton">Tonne</option>
+                    <option value="kg">Kilogram</option>
+                    <option value="g" selected>Gram</option>
+                    <option value="mlg">Milligram</option>
+                    <option value="mig">Microgram</option>
+                    <option value="ounce">Ounce</option>
+                    <option value="pound">Pound</option>
+                    <option value="carat">Carat</option>
+                </select>
+            </div>
+
+            <div class="convert-btn">
+
+                <button id="temp-btn" class="conv-btn  c-conv-btn temp-conv-btn">Convert</button>
+                <button class="conv-btn  c-clear-btn temp-clear-btn">Clear</button>
+            </div>
+            
+
+
+        </div>
+        <div class="newconv time">
+
+            <div class="sel-box temp-input-box">
+
+                <input type="text" class="temp-input sel-ip">
+
+                <select name="temp-in" id="temp-in" class="sel-list">
+                    <option value="ton">Tonne</option>
+                    <option value="kg" selected>Kilogram</option>
+                    <option value="g">Gram</option>
+                    <option value="mlg">Milligram</option>
+                    <option value="mig">Microgram</option>
+                    <option value="ounce">Ounce</option>
+                    <option value="pound">Pound</option>
+                    <option value="carat">Carat</option>
+                </select>
+
+            </div>
+
+            <h1 class="to"><i class="bi bi-arrow-down-square"></i></h1>
+
+            
+            <div class="sel-box temp-output-box">
+                
+                <input type="text" class="temp-output sel-ip sel-dis" disabled>
+                
+                <select name="temp-out" id="temp-out" class="sel-list">
+                    <option value="ton">Tonne</option>
+                    <option value="kg">Kilogram</option>
+                    <option value="g" selected>Gram</option>
+                    <option value="mlg">Milligram</option>
+                    <option value="mig">Microgram</option>
+                    <option value="ounce">Ounce</option>
+                    <option value="pound">Pound</option>
+                    <option value="carat">Carat</option>
+                </select>
+            </div>
+
+            <div class="convert-btn">
+
+                <button id="time-btn" class="conv-btn  c-conv-btn time-conv-btn">Convert</button>
+                <button class="conv-btn  c-clear-btn time-clear-btn">Clear</button>
+            </div>
+            
+
+
+        </div>
+
+    </div>
+
+    
+
+
+
+
+    
+</body>
+<script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+<script src="script.js"></script>
+</html>
